@@ -26,6 +26,7 @@
 		else {
 			echo "<p>Successfully added new record.</p>";
 		}
+		mysqli_close($conn); 
 	}
 	echo "<button><a href='add.php'>Go Back</a></button>";
 ?>

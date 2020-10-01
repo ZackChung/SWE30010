@@ -18,5 +18,6 @@
 		<input type="date" name="date" required="required" /><br/>
 		<input type="submit" value="Add" />
 	</form>
+	<button><a href='index.php'>Go Back</a></button>
 </body>
 </html>
