@@ -23,6 +23,9 @@
             echo "<p>Something is wrong with your input.", $datebegin, $dateend, "</p>";   
 		}
 		else {
+			session_start();
+			$_SESSION["datebegin"] = $datebegin;
+			$_SESSION["dateend"] = $dateend;
 			echo "<table><tr><th>Sales Code</th><th>Product Code</th><th>Sales Quantity</th><th>Date of Purchase</th></tr>";			
             while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr><td>" .$row["Sales_Code"]."</td><td> ".$row["Product_Code"]."</td><td>" .$row["Sales_Quantity"]."</td><td>" .$row["Date_Of_Purchase"]."</td>";
@@ -30,6 +33,8 @@
 			echo "</table>";
             echo "<p>Successfully generated sales report for ", mysqli_num_rows($result)," sales between ", $datebegin, " and ", $dateend, ".</p>";
 		}
+
+		
 	}
 	echo "<button><a href='report.php'>Go Back</a></button>";
 	echo "<button><a href='csv.php'>Export to CSV</a></button>";
