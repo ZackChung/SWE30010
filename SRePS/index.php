@@ -9,5 +9,6 @@
 	<h1>Sales Report and Predict System</h1>
 	<button><a href="add.php" title="add record">Add a Sales Record</a></button>
 	<button><a href="display.php" title="display record">Display a Sales Record</a></button>
+	<button><a href="report.php" title="generate report">Generate a Sales Report</a></button>
 </body>
 </html>
