@@ -12,5 +12,6 @@
 	<button><a href="editRecord.php" title="edit record">Edit a Sales Record</a></button>
 	<button><a href="salesReport.php" title="generate report">Generate a Sales Report</a></button>
 	<button><a href="predictSales.php" title="predict report">Predict the Sales</a></button>
+	<button><a href="stocksubmit.php" title="stock check">Check the Stock</a></button>
 </body>
 </html>

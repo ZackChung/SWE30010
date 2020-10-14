@@ -30,5 +30,6 @@
 		</select>
 		<input type ="submit" value="Submit"/>
 	</form>
+	<button><a href='index.php'>Go Back</a></button>
 </body>
 </html>

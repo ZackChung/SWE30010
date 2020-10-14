@@ -10,8 +10,7 @@ function enterEditMode(ele) {
 	document.getElementById("cancel").onclick = function() {
 		if (document.getElementById("s_table").style.display != "none") {
 			location.href = location.pathname + "#sales";
-		} else
-		if (document.getElementById("p_table").style.display != "none") {
+		} else if (document.getElementById("p_table").style.display != "none") {
 			location.href = location.pathname + "#products";
 		}
 		
@@ -66,7 +65,7 @@ window.onload = function() {
 	}
 	
 	function primeEditButton() {
-		var ebuttons = document.getElementsByClassName("edit")
+		var ebuttons = document.getElementsByClassName("edit");
 		
 		for (var i=0;i<ebuttons.length;i++) {
 				ebuttons[i].onclick = function() { 
@@ -80,13 +79,11 @@ window.onload = function() {
 	
 	if (location.hash == "#products") {
 		tabTo("products");
-	} else
-	if (location.hash == "#sales") {
+	} else if (location.hash == "#sales") {
 		tabTo("sales");
 	} else {
 		tabTo("products");
 	}
-	
 	
 	primeEditButton();
 	

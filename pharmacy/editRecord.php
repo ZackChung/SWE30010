@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="style/SRePS.css" />
-	<script type="text/javascript" src="js/SRePS.js"></script>
+	<script type="text/javascript" src="js/edit.js"></script>
 	<?php
 		require_once('settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);

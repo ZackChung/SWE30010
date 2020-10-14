@@ -6,6 +6,16 @@
 	<title>SRePS</title>
 </head>
 <body>
+	<header>
+		<ul>
+			<li>
+				<a href="#" id="sales">Sales</a>
+			</li>
+			<li>
+				<a href="#" id="product">Product</a>
+			</li>
+		</ul>
+	</header>
 	<form method="post" action="displayRecord.php">
 		<input type="text" name="scode" pattern="[0-9]+" />
 		<input type="submit" name="search" value="Search" /><br/>
@@ -13,8 +23,8 @@
 <?php
 	require_once('settings.php');
 	$conn = @mysqli_connect($host, $user, $pwd, $dbname);
-	if(!$conn){ 
-		echo "<p>Database Connection Failure</p>"; 
+	if (!$conn) {
+		die(mysqli_connect_error());
 	}
 	else{
 		$table = "Sales";

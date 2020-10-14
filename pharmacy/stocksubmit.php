@@ -1,15 +1,12 @@
 <?php 
-	$servername= "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "test";
+	require_once('settings.php');
 
 	function alert($msg) {
     	echo "<script type='text/javascript'>alert('$msg');";
-    	echo "window.location.href='stockcheck.php';</script>";
-    	 
+    	echo "window.location.href='index.php';</script>";
 	}
-	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 	$msg = "";
 
 	if ($conn->connect_error) {
