@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="description", content="PHP SRePS" />
-	<title>SRePS</title>
+	<title>Sales Report and Prediction System</title>
 </head>
 <body>
 <?php

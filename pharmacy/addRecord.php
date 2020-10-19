@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="description", content="PHP SRePS" />
-	<title>SRePS</title>
-	<link rel="stylesheet" type="text/css" href="style/SRePS.css" />
+	<title>SRePS - Add</title>
+	<link rel="stylesheet" type="text/css" href="style/edit.css" />
 	<script type="text/javascript" src="js/add.js"></script>
 </head>
 <body>

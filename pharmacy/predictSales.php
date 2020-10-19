@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Predict Sales</title>
+	<title>SRePS - Predict</title>
 </head>
 <body>
 	<form action="predictAction.php" method="post">
