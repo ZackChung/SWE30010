@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Results</title>
+	<title>Sales Report and Prediction System</title>
 </head>
 
 <body>

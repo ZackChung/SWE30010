@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="style/SRePS.css" />
+	<title>Sales Report and Prediction System</title>
+	<link rel="stylesheet" href="style/edit.css" />
 	<script type="text/javascript" src="js/edit.js"></script>
 	<?php
 		require_once('settings.php');

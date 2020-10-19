@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="description", content="PHP SRePS" />
-	<title>SRePS</title>
+	<title>Sales Report and Prediction System</title>
 </head>
 <body>
 <?php
@@ -26,6 +26,10 @@
 			$date = trim($_POST["date"]);
 			$table = "Sales";
 			$query = "insert into $table values ('$scode', '$s_pcode', '$quantity', '$date')";
+			$updatesql = "update Product set Stock = Stock - $quantity where Product_Code = $s_pcode";
+			if(!mysqli_query($conn, $updatesql)) {
+				echo mysqli_error($conn);
+			}
 		} else {
 			$href_id = "product";
 			$p_pcode = trim($_POST["p_pcode"]);
