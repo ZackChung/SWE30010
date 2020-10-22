@@ -83,7 +83,8 @@
 		mysqli_close($conn); 
 		
 	?>
-
+	<br/><br/>
+	<h2>Profit Calculation based on dates</h2>
 	<form name="Filter" method="POST" action="profit_calc_result.php">
 		From:
 		<input type="date" name="dateFrom" value="<?php echo date('Y-m-d'); ?>" />
@@ -98,8 +99,8 @@
 
 	<?php
 		session_start();
-		$dateFrom= $_POST["dateFrom"];
-		$dateTo= $_POST["dateTo"];
+		$dateFrom= isset($_POST["dateFrom"]);
+		$dateTo= isset($_POST["dateTo"]);
 		$_SESSION["dateFrom"] = $dateFrom;
 		$_SESSION["dateTo"] = $dateTo;
 	?>
