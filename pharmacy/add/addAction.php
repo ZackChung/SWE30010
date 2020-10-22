@@ -11,7 +11,7 @@
 	    echo "<script type='text/javascript'>alert('$msg');</script>";
 	}
 
-	require_once('settings.php');
+	require_once('../settings.php');
 	$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 	if (!$conn) {
 		die(mysqli_connect_error());

@@ -5,7 +5,7 @@
 	<meta name="description", content="PHP SRePS" />
 	<title>SRePS - Display</title>
 	<?php
-		require_once('settings.php');
+		require_once('../settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 		if (!$conn) {
 			die(mysqli_connect_error());

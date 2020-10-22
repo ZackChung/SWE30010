@@ -4,8 +4,8 @@
 	<meta charset="utf-8" />
 	<meta name="description", content="PHP SRePS" />
 	<title>SRePS - Add</title>
-	<link rel="stylesheet" type="text/css" href="style/edit.css" />
-	<script type="text/javascript" src="js/add.js"></script>
+	<link rel="stylesheet" type="text/css" href="../style/edit.css" />
+	<script type="text/javascript" src="../js/add.js"></script>
 </head>
 <body>
 	<header>
@@ -70,6 +70,6 @@
 		</table>
 		<input type="submit" value="Add" name="add"/>
 	</form>
-	<button><a href='index.php'>Go Back</a></button>
+	<button><a href='../index.php'>Go Back</a></button>
 </body>
 </html>

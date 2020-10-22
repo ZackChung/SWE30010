@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-	require_once('settings.php');
+	require_once('../settings.php');
 	$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 	if(!$conn){ 
 		echo "<p>Database Connection Failure</p>"; 
@@ -15,18 +15,18 @@
 	else {
         $datebegin = trim($_POST["datebegin"]);
         $dateend = trim($_POST["dateend"]);
-        $table = "sales";
+        $table = "Sales";
         $query = "SELECT * FROM $table WHERE Date_Of_Purchase BETWEEN '" . $datebegin . "' AND  '" . $dateend . "' ORDER by Date_Of_Purchase ASC";
 
         $result = mysqli_query($conn, $query);
 		if (!$result) {
-            echo "<p>Something is wrong with your input.", $datebegin, $dateend, "</p>";   
+            echo mysqli_error($conn);
 		}
 		else {
 			session_start();
 			$_SESSION["datebegin"] = $datebegin;
 			$_SESSION["dateend"] = $dateend;
-			echo "<table><tr><th>Sales Code</th><th>Product Code</th><th>Sales Quantity</th><th>Date of Purchase</th></tr>";			
+			echo "<table border=\"1\"><tr><th>Sales Code</th><th>Product Code</th><th>Sales Quantity</th><th>Date of Purchase</th></tr>";			
             while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr><td>" .$row["Sales_Code"]."</td><td> ".$row["Product_Code"]."</td><td>" .$row["Sales_Quantity"]."</td><td>" .$row["Date_Of_Purchase"]."</td>";
               }
@@ -36,7 +36,7 @@
 
 		
 	}
-	echo "<button><a href='report.php'>Go Back</a></button>";
+	echo "<button><a href='salesReportCSV.php'>Go Back</a></button>";
 	echo "<button><a href='csv.php'>Export to CSV</a></button>";
 ?>
 </body>

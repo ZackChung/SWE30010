@@ -6,7 +6,7 @@
 <body>
 	<form action="predictAction.php" method="post">
 	<?php 
-		require_once('settings.php');
+		require_once('../settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 
 		if ($conn->connect_error) {
@@ -30,6 +30,6 @@
 		</select>
 		<input type ="submit" value="Submit"/>
 	</form>
-	<button><a href='index.php'>Go Back</a></button>
+	<button><a href='../index.php'>Go Back</a></button>
 </body>
 </html>

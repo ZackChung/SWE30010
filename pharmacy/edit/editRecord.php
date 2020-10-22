@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>Sales Report and Prediction System</title>
-	<link rel="stylesheet" href="style/edit.css" />
-	<script type="text/javascript" src="js/edit.js"></script>
+	<link rel="stylesheet" href="../style/edit.css" />
+	<script type="text/javascript" src="../js/edit.js"></script>
 	<?php
-		require_once('settings.php');
+		require_once('../settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 		if (!$conn) {
 			header("HTTP/1.0 500 Internal Server Error");
@@ -57,9 +57,9 @@
 					<input type="text" class="bought" name="bought" value="<?php echo $row["Bought_Price"]; ?>" />
 				</td>
 				<td>
-					<!--<button type="button" id="edit" name="edit" >
+					<!-- <button type="button" id="edit" name="edit" >
 						<img src="images/pencil2.png" />
-					</input>-->
+					</input> -->
 				</td>
 			</tr>
 			<?php
@@ -95,9 +95,9 @@
 					<input type="text" id="sdate" name="sdate" value="<?php echo $row["Date_Of_Purchase"] ?>" />
 				</td>
 				<td>
-					<!--<button type="button" id="edit" name="edit" >
+					<!-- <button type="button" id="edit" name="edit" >
 						<img src="images/pencil2.png" />
-					</input>-->
+					</input> -->
 				</td>
 			</tr>
 			<?php
@@ -105,6 +105,6 @@
 			?>
 		</table>
 	</form>
-	<button><a href='index.php'>Go Back</a></button>
+	<button><a href='../index.php'>Go Back</a></button>
 </body>
 </html>

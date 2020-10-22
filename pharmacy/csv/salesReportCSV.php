@@ -8,12 +8,12 @@
 
 <body>
 	<h1>Generate a Sales Report</h1>
-	<form method="post" action="salesReportPage.php">
+	<form method="post" action="salesReportCSVPage.php">
         <label for="databegin">Date Range Begin:</label><br/>
         <input type="date" name="datebegin" required="required" /><br/>
         <label for="dataend">Date Range End:</label><br/>
         <input type="date" name="dateend" required="required" /><br/>
         <input type="submit" value="Generate" />
     </form>
-    <button><a href ="index.php">Go Back</a></button>
+    <button><a href ="../index.php">Go Back</a></button>
 </body>

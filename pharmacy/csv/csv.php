@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-	require_once('settings.php');
+	require_once('../settings.php');
 	$conn = @mysqli_connect($host, $user, $pwd, $dbname);
 	if(!$conn){ 
 		echo "<p>Database Connection Failure</p>"; 
@@ -17,12 +17,12 @@
 		ob_get_clean();
 		$datebegin = $_SESSION["datebegin"];
 		$dateend = $_SESSION["dateend"];
-        $table = "sales";
+        $table = "Sales";
         $query = "SELECT * FROM $table WHERE Date_Of_Purchase BETWEEN '" . $datebegin . "' AND  '" . $dateend . "' ORDER by Date_Of_Purchase ASC";
 
         $result = mysqli_query($conn, $query);
 		if (!$result) {
-            echo "<p>Something is wrong with your input.", $datebegin, $dateend, "</p>";   
+            echo mysqli_error($conn);
 		}
 		else {
 

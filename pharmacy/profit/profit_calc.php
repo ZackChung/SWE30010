@@ -12,26 +12,22 @@
 
 <body>
 	<?php	
-		$dbhost = "localhost";
-		$dbuser = "root";
-		$dbpass = "";
-		$db = "pharmacy";
-		$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- 
-		if (!$conn)
-		{
-			echo "<p>Database connection failure</p>";
+		require_once('../settings.php');
+		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
+
+		if (!$conn) {
+			die(mysqli_connect_error());
 		}
 		else
 		{
 			$query = "
-			SELECT sales.Sales_Code, sales.Product_Code, sales.Sales_Quantity, product.Sales_Price, product.Product_Name, product.Bought_Price
-			FROM sales 
-			INNER JOIN product ON sales.Product_Code = product.Product_Code";
+			SELECT Sales.Sales_Code, Sales.Product_Code, Sales.Sales_Quantity, Product.Sales_Price, Product.Product_Name, Product.Bought_Price
+			FROM Sales 
+			INNER JOIN Product ON Sales.Product_Code = Product.Product_Code";
 			$result = mysqli_query($conn, $query);
 			if (!$result)
 			{
-				echo "<p>Something is wrong with ", $query, "</p>";
+				echo mysqli_error($conn);
 			}
 			else
 			{
@@ -61,10 +57,8 @@
 					$income += $row["Sales_Quantity"] * $row["Sales_Price"];
 					$cost += $row["Sales_Quantity"] * $row["Bought_Price"];
 				}
-
-				
-				echo "</table>\n";
 			
+				echo "</table>\n";
 			
 				echo "<h2>Total Income:</h2>";
 				echo "<p>$$income</p>";
@@ -76,8 +70,8 @@
 				echo "<h2>Total Profit:</h2>";
 				echo "<p>$$profit</p>";
 
+				mysqli_free_result($result);
 			}
-			mysqli_free_result($result);
 		}			
 
 		mysqli_close($conn); 
@@ -91,17 +85,19 @@
 		To:
 		<input type="date" name="dateTo" value="<?php echo date('Y-m-d'); ?>" />
 		<br/><br/>
-		<input type="submit" name="submit" value="Calculate"/>
-
-		
+		<input type="submit" name="submit" value="Calculate"/>	
 	</form>
+
+	<button><a href ="../index.php">Go Back</a></button>
 
 	<?php
 		session_start();
-		$dateFrom= $_POST["dateFrom"];
-		$dateTo= $_POST["dateTo"];
-		$_SESSION["dateFrom"] = $dateFrom;
-		$_SESSION["dateTo"] = $dateTo;
+		if(isset($_POST["dateFrom"]) && isset($_POST["dateTo"])) {
+			$dateFrom= $_POST["dateFrom"];
+			$dateTo= $_POST["dateTo"];
+			$_SESSION["dateFrom"] = $dateFrom;
+			$_SESSION["dateTo"] = $dateTo;
+		}
 	?>
 	
 	

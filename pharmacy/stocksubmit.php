@@ -21,7 +21,7 @@
 <?php 
 	while($row = $result->fetch_assoc()) {
 		$stock = $row['Stock'];
-		if ($stock <5) {
+		if ($stock < 10) {
 			$msg .= $row['Product_name']. " is low, only " .$stock . " is left\\n";	
 		}		
 	}
