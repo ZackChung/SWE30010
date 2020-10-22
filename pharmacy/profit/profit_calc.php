@@ -7,10 +7,11 @@
 	<meta name 		= "keywords"	content = "Profit Calculation"	 />
 	<meta name		= "author"		content = "Yulei Zhu"			 />
 	<title>Profit Calculation</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 </head>
 
 
-<body>
+<body class="card">
 	<?php	
 		require_once('../settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
@@ -31,8 +32,11 @@
 			}
 			else
 			{
-				echo "<h1>Profit Calculation</h1>\n";
-				echo "<table border = \"1\">\n";
+				echo "<header class=\"card-header\">"
+					."<h1 class=\"text-center\" style=\"color: #4a919e;\">Profit Calculation</h1>"
+					."</header>\n";
+				echo "<div class=\"card-body\">";
+				echo "<table border = \"1\" class=\"table\">\n";
 				echo "<tr>\n"
 					."<th scope=\"col\">Sales_Code</th>\n"
 					."<th scope=\"col\">Product_Code</th>\n"
@@ -60,14 +64,14 @@
 			
 				echo "</table>\n";
 			
-				echo "<h2>Total Income:</h2>";
+				echo "<h5 class=\"font-weight-bold\">Total Income:</h5>";
 				echo "<p>$$income</p>";
 				
-				echo "<h2>Total Cost:</h2>";
+				echo "<h5 class=\"font-weight-bold\">Total Cost:</h5>";
 				echo "<p>$$cost</p>";
 			
 				$profit = $income - $cost;
-				echo "<h2>Total Profit:</h2>";
+				echo "<h5 class=\"font-weight-bold\">Total Profit:</h5>";
 				echo "<p>$$profit</p>";
 
 				mysqli_free_result($result);
@@ -77,8 +81,7 @@
 		mysqli_close($conn); 
 		
 	?>
-	<br/><br/>
-	<h2>Profit Calculation based on dates</h2>
+
 	<form name="Filter" method="POST" action="profit_calc_result.php">
 		From:
 		<input type="date" name="dateFrom" value="<?php echo date('Y-m-d'); ?>" />
@@ -86,26 +89,22 @@
 		To:
 		<input type="date" name="dateTo" value="<?php echo date('Y-m-d'); ?>" />
 		<br/><br/>
-		<input type="submit" name="submit" value="Calculate"/>	
+		<input type="submit" name="submit" value="Calculate" class="btn btn-primary btn-sm"/>	
 	</form>
+	</div>
 
-	<button><a href ="../index.php">Go Back</a></button>
+	<div class="card-footer">
+		<a href='../index.php' class="btn btn-primary btn-sm">Go Back</a>
+	</div>	
 
 	<?php
 		session_start();
-<<<<<<< HEAD:pharmacy/profit/profit_calc.php
 		if(isset($_POST["dateFrom"]) && isset($_POST["dateTo"])) {
 			$dateFrom= $_POST["dateFrom"];
 			$dateTo= $_POST["dateTo"];
 			$_SESSION["dateFrom"] = $dateFrom;
 			$_SESSION["dateTo"] = $dateTo;
 		}
-=======
-		$dateFrom= isset($_POST["dateFrom"]);
-		$dateTo= isset($_POST["dateTo"]);
-		$_SESSION["dateFrom"] = $dateFrom;
-		$_SESSION["dateTo"] = $dateTo;
->>>>>>> 62c270320b211f46cc5e215a2e3db06f77c36003:profit_calc.php
 	?>
 	
 	

@@ -7,10 +7,11 @@
 	<meta name 		= "keywords"	content = "Monthly report"		 />
 	<meta name		= "author"		content = "Yulei Zhu"	 />
 	<title>Monthly report</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 </head>
 
 
-<body>
+<body class="card">
 	<?php	
 		require_once('../settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
@@ -32,8 +33,11 @@
 			else
 			{
 				//display a table of the sales detail
-				echo "<h1>Sales Report</h1>\n";
-				echo "<table border = \"1\">\n";
+				echo "<header class=\"card-header\">"
+					."<h1 class=\"text-center\" style=\"color: #4a919e;\">Display Sales Records or Prodcuts</h1>"
+					."</header>\n";
+				echo "<div class=\"card-body\">";
+				echo "<table border = \"1\" class=\"table\">\n";
 				echo "<tr>\n"
 					."<th scope=\"col\">Sales_Code</th>\n"
 					."<th scope=\"col\">Product_Code</th>\n"
@@ -65,7 +69,8 @@
 				
 				echo "<h2>Total Cost:</h2>";
 				echo "<p>$$cost</p>";
-			
+				
+				echo "</div>";
 			}
 			mysqli_free_result($result);
 		}			
@@ -73,10 +78,8 @@
 		
 	?>
 
-	<button><a href='../index.php'>Go Back</a></button>
-	
-	<br/><br/>
-	
-	
+	<div class="card-footer">
+		<a href='../index.php' class="btn btn-primary btn-sm">Go Back</a>
+	</div>	
 </body>
 </html>

@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 	<title>SRePS - Predict</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 </head>
-<body>
-	<form action="predictAction.php" method="post">
+<body class="card">
+	<header class="card-header">
+		<h1 class="text-center" style="color: #4a919e;">Predict Sales Report</h1>
+	</header>
+	<form action="predictAction.php" method="post" class="card-body">
 	<?php 
 		require_once('../settings.php');
 		$conn = @mysqli_connect($host, $user, $pwd, $dbname);
@@ -28,8 +32,10 @@
 			<option value = "week">Weekly</option> 
 			<option value = "month">Monthly</option>
 		</select>
-		<input type ="submit" value="Submit"/>
+		<input type ="submit" value="Submit" class="btn btn-primary btn-sm"/>
 	</form>
-	<button><a href='../index.php'>Go Back</a></button>
+	<div class="card-footer">
+		<a href='../index.php' class="btn btn-primary btn-sm">Go Back</a>
+	</div>
 </body>
 </html>
