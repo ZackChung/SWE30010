@@ -4,8 +4,12 @@
 	<meta charset="utf-8" />
 	<meta name="description", content="PHP SRePS" />
 	<title>Sales Report and Prediction System</title>
+	<link rel="stylesheet" href="../style/style.css" />
 </head>
 <body>
+<?php 
+		include '../ui-design/menu.php';
+?>
 <?php
 	function alert($msg) {
 	    echo "<script type='text/javascript'>alert('$msg');</script>";

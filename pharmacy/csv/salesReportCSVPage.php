@@ -10,6 +10,9 @@
 	<header class="card-header">
         <h1 class="text-center" style="color: #4a919e;">Export to CSV File</h1>
     </header>
+	<?php 
+		include '../ui-design/menu.php';
+	?>
     <div class="card-body">
 <?php
 	require_once('../settings.php');
