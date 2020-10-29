@@ -4,6 +4,7 @@
 	<title>Sales Report and Prediction System</title>
 <!-- 	<link rel="stylesheet" href="../style/edit.css" /> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+	<link rel="stylesheet" href="../style/style.css" />
 	<script type="text/javascript" src="../js/edit.js"></script>
 	<?php
 		require_once('../settings.php');
@@ -17,6 +18,9 @@
 	<header class="card-header">
 		<h1 class="text-center" style="color: #4a919e;">Edit Sales Records or Prodcuts</h1>
 	</header>
+	<?php 
+		include '../ui-design/menu.php';
+	?>
 	<div class="card-body">
 		<ul class="list-group list-group-horizontal-sm">
 			<li class="list-group-item d-inline">
